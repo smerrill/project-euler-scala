@@ -5,7 +5,8 @@ package com.stevenwmerrill
  * What is the sum of the digits of the number 2^1000?
  */
 object Problem16 extends App {
+  implicit def charToInt(x: Char): Int = x.toString.toInt
   println(
-    BigInt(2).pow(1000).toString.foldLeft(0)(_ + _.toString.toInt)
+    BigInt(2).pow(1000).toString.foldLeft(0)(_ + _)
   )
 }
